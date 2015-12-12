@@ -12,11 +12,11 @@
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <view key="view" tag="101" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="board" translatesAutoresizingMaskIntoConstraints="NO" id="ixn-Ee-JPa">
+                            <imageView tag="100000" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="board" translatesAutoresizingMaskIntoConstraints="NO" id="ixn-Ee-JPa">
                                 <rect key="frame" x="-28" y="96" width="376" height="375"/>
                                 <animations/>
                                 <constraints>
@@ -34,17 +34,6 @@
                                     </mask>
                                 </variation>
                             </imageView>
-                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oCD-K2-Bt5" userLabel="Button ML">
-                                <rect key="frame" x="-9" y="234" width="101" height="100"/>
-                                <animations/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="Tuu-5W-ipJ"/>
-                                    <constraint firstAttribute="width" constant="100" id="vip-RY-8Yk"/>
-                                </constraints>
-                                <connections>
-                                    <action selector="buttonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fx4-bS-gjb"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LBI-UL-xP0" userLabel="Button TL">
                                 <rect key="frame" x="-9" y="109" width="101" height="100"/>
                                 <animations/>
@@ -76,6 +65,17 @@
                                 </constraints>
                                 <connections>
                                     <action selector="buttonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VEy-Te-HRL"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oCD-K2-Bt5" userLabel="Button ML">
+                                <rect key="frame" x="-9" y="234" width="101" height="100"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="Tuu-5W-ipJ"/>
+                                    <constraint firstAttribute="width" constant="100" id="vip-RY-8Yk"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="buttonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fx4-bS-gjb"/>
                                 </connections>
                             </button>
                             <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fa5-rl-A1g" userLabel="Button MC">
@@ -133,7 +133,7 @@
                                     <action selector="buttonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YJm-CT-Nnu"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" tag="10" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RESULT" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jTh-hq-R84">
+                            <label opaque="NO" userInteractionEnabled="NO" tag="13" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RESULT" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jTh-hq-R84">
                                 <rect key="frame" x="35" y="246" width="250" height="77"/>
                                 <animations/>
                                 <color key="backgroundColor" red="0.85323942550505039" green="0.85323942550505039" blue="0.85323942550505039" alpha="1" colorSpace="calibratedRGB"/>
@@ -145,6 +145,22 @@
                                 <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" tag="1000" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ako-7A-E8M">
+                                <rect key="frame" x="108" y="397" width="104" height="30"/>
+                                <animations/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="104" id="260-4Q-uik"/>
+                                    <constraint firstAttribute="height" constant="30" id="WLI-CC-6ks"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="15"/>
+                                <state key="normal" title="PLAY AGAIN">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="playAgainButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UtQ-pO-Vda"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -154,8 +170,11 @@
                             <constraint firstItem="LgX-Ni-FJP" firstAttribute="leading" secondItem="ixn-Ee-JPa" secondAttribute="trailing" constant="-112" id="6kc-Z4-9SQ"/>
                             <constraint firstItem="oCD-K2-Bt5" firstAttribute="top" secondItem="ixn-Ee-JPa" secondAttribute="bottom" constant="-237" id="8l3-RM-T2v"/>
                             <constraint firstItem="6vV-py-2Un" firstAttribute="leading" secondItem="ixn-Ee-JPa" secondAttribute="trailing" constant="-238" id="94R-Na-sul"/>
+                            <constraint firstItem="ixn-Ee-JPa" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="AYK-P7-s3E"/>
                             <constraint firstItem="ixn-Ee-JPa" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="AZa-qD-E5q"/>
                             <constraint firstItem="jTh-hq-R84" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="CoJ-iP-Xps"/>
+                            <constraint firstItem="Ako-7A-E8M" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="GA8-Tf-STA"/>
+                            <constraint firstItem="Ako-7A-E8M" firstAttribute="top" secondItem="6vV-py-2Un" secondAttribute="bottom" constant="-65" id="KGY-uq-ths"/>
                             <constraint firstItem="ixn-Ee-JPa" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="SeC-eR-iNY"/>
                             <constraint firstItem="EjT-sK-81F" firstAttribute="top" secondItem="ixn-Ee-JPa" secondAttribute="bottom" constant="-109" id="UO3-DL-vTQ"/>
                             <constraint firstItem="jTh-hq-R84" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="X1N-Ie-X8g"/>
@@ -171,11 +190,18 @@
                             <constraint firstItem="5DW-tP-6Yf" firstAttribute="leading" secondItem="ixn-Ee-JPa" secondAttribute="trailing" constant="-238" id="q5s-4U-FSe"/>
                             <constraint firstItem="LgX-Ni-FJP" firstAttribute="top" secondItem="ixn-Ee-JPa" secondAttribute="bottom" constant="-237" id="rYi-hu-4pB"/>
                             <constraint firstItem="ixn-Ee-JPa" firstAttribute="top" secondItem="DwZ-va-7EV" secondAttribute="bottom" constant="-113" id="tTW-Ub-kxq"/>
+                            <constraint firstItem="Ako-7A-E8M" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="x36-RU-a9Q"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="SeC-eR-iNY"/>
+                                <exclude reference="x36-RU-a9Q"/>
+                            </mask>
+                        </variation>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
-                        <outlet property="button" destination="LBI-UL-xP0" id="7aG-xu-UYy"/>
+                        <outlet property="playAgainButton" destination="Ako-7A-E8M" id="g70-iO-LT4"/>
                         <outlet property="resultLabel" destination="jTh-hq-R84" id="dzf-a6-HaB"/>
                     </connections>
                 </viewController>

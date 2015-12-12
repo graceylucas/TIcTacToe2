@@ -22,14 +22,46 @@ class ViewController: UIViewController {
     // Creates an array that defines all possible winning combinations
     let winningCombinations = [[0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 6], [1, 4, 7], [2, 5, 8], [0, 4, 8], [2, 4, 6] ]
     
-        
+    
     // Determines whether the game is finished. If yes, buttons will no longer work.
     var gameActive = true
     
     @IBOutlet weak var resultLabel: UILabel!
     
     
-    @IBOutlet weak var button: UIButton!
+    @IBOutlet weak var playAgainButton: UIButton!
+    
+    
+    // Resets the gameState, starts with Player #1, hides the results label and play again button, and sets all the senderbutton images back to empty
+    @IBAction func playAgainButtonPressed(sender: UIButton) {
+        
+        gameState = [0, 0, 0, 0, 0, 0, 0, 0, 0]
+        
+        activePlayer = 1
+        
+        gameActive = true
+        
+        resultLabel.hidden = true
+        
+        self.playAgainButton.alpha = 0
+        
+        resultLabel.center = CGPointMake(resultLabel.center.x - 500, resultLabel.center.y)
+        
+        
+        // Sets all buttons tag back to 0
+        var buttonToClear : UIButton
+        
+        for var i = 0; i < 9; i++ {
+            
+            buttonToClear = view.viewWithTag(i) as! UIButton
+            
+            buttonToClear.setImage(nil, forState: .Normal)
+        }
+        
+        
+        
+    }
+    
     
     
     @IBAction func buttonPressed(sender: UIButton) {
@@ -69,7 +101,6 @@ class ViewController: UIViewController {
                     
                     if (gameState[combination[0]] == 1) {
                         
-                        
                         resultLabel.text = "O wins!"
                         
                         print("O wins!")
@@ -83,19 +114,28 @@ class ViewController: UIViewController {
                     
                     // This unhides the label and animates it in
                     
-                    resultLabel.hidden = false;
+                    resultLabel.hidden = false
+                    
                     
                     UIView.animateWithDuration(0.5, animations: { () -> Void in
                         
                         self.resultLabel.center = CGPointMake(self.resultLabel.center.x + 500, self.resultLabel.center.y)
                         
-                    })
-                }
-            }
+                        }, completion: { (success) -> Void in
+                            
+                            UIView.animateWithDuration(0.25, animations: { () -> Void in
+                                
+                                self.playAgainButton.alpha = 1
+                                
+                            })
+                            
+                    })  // end of animation
+                    
+                } // end of if winning condition reached
+            } // end of for loop
         }
+        
     }
-    
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -103,7 +143,11 @@ class ViewController: UIViewController {
         
         resultLabel.hidden = true
         
+        self.playAgainButton.alpha = 0
+        
         resultLabel.center = CGPointMake(resultLabel.center.x - 500, resultLabel.center.y)
+        
+        
         
         
     }
