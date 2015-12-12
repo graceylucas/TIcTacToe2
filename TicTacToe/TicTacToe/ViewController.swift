@@ -22,6 +22,12 @@ class ViewController: UIViewController {
     // Creates an array that defines all possible winning combinations
     let winningCombinations = [[0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 6], [1, 4, 7], [2, 5, 8], [0, 4, 8], [2, 4, 6] ]
     
+        
+    // Determines whether the game is finished. If yes, buttons will no longer work.
+    var gameActive = true
+    
+    @IBOutlet weak var resultLabel: UILabel!
+    
     
     @IBOutlet weak var button: UIButton!
     
@@ -30,7 +36,7 @@ class ViewController: UIViewController {
         
         
         // This if statement tests whether the button has been pressed. If it hasn't, the tag is 0 and the activePlayer is set to player #1. Once the button is pressed, activePlayer is then set to player #2.
-        if (gameState[sender.tag] == 0) {
+        if (gameState[sender.tag] == 0 && gameActive == true) {
             
             gameState[sender.tag] = activePlayer
             
@@ -59,14 +65,31 @@ class ViewController: UIViewController {
                 //checks to see if all three items in a winningCombination array are the same and aren't empty
                 if (gameState[combination[0]] != 0 && gameState[combination[0]] == gameState[combination[1]] && gameState[combination[1]] == gameState[combination[2]]){
                     
+                    gameActive = false
+                    
                     if (gameState[combination[0]] == 1) {
                         
-                        print("0 has won !")
+                        
+                        resultLabel.text = "O wins!"
+                        
+                        print("O wins!")
                         
                     } else {
                         
-                        print("X has won !")
+                        resultLabel.text = "X wins!"
+                        
+                        print("X wins!")
                     }
+                    
+                    // This unhides the label and animates it in
+                    
+                    resultLabel.hidden = false;
+                    
+                    UIView.animateWithDuration(0.5, animations: { () -> Void in
+                        
+                        self.resultLabel.center = CGPointMake(self.resultLabel.center.x + 500, self.resultLabel.center.y)
+                        
+                    })
                 }
             }
         }
@@ -77,6 +100,12 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        resultLabel.hidden = true
+        
+        resultLabel.center = CGPointMake(resultLabel.center.x - 500, resultLabel.center.y)
+        
+        
     }
     
     override func didReceiveMemoryWarning() {
